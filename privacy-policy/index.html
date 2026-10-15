@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--
-  GPA Sri Lanka - Privacy Policy. THIS FILE IS THE SOURCE OF A PUBLISHED PAGE.
+  SL GPA - Privacy Policy. THIS FILE IS THE SOURCE OF A PUBLISHED PAGE.
 
   Published with GitHub Pages at:
     https://sl-gpa-calculator.github.io/privacy-policy/
@@ -21,13 +21,20 @@
 
   Section 10 must agree with the retention decision recorded in
     supabase/migrations/20260910044500_transcript_submissions_retention_decision.sql
-  and section 5's statement about the Gemini tier must be changed the day
+  and it restates DeleteAccountScreen.deletedItems / keptItems
+  (lib/features/auth/presentation/screens/delete_account_screen.dart) and
+  docs/delete-account.html; change one and the others must follow.
+  Published 2026-10-15 at the owner's direction, BEFORE a build with the
+  Delete account screen is what students can install: section 10 names the
+  option, and its own fallback ("If your copy of the app doesn't show that
+  option ... email us") covers an older build until one ships.
+  Section 5's statement about the Gemini tier must be changed the day
   billing is set up. Sections 6 and 14 restate what the app's own labels
   say; change a label and they must follow.
 
   Not reviewed by a lawyer - see the note in the footer.
 -->
-<title>GPA Sri Lanka Privacy Policy</title>
+<title>SL GPA Privacy Policy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -405,12 +412,12 @@
   <div class="band-inner">
     <div class="mark">
       <span class="mark-glyph">G</span>
-      <span class="mark-name">GPA Sri Lanka</span>
+      <span class="mark-name">SL GPA</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="lede">What GPA Sri Lanka collects, why, and how it's kept — written to match exactly what the app does, not a template.</p>
+    <p class="lede">What SL GPA collects, why, and how it's kept — written to match exactly what the app does, not a template.</p>
     <div class="meta-row">
-      <span class="pill">Effective 8 Oct 2026</span>
+      <span class="pill">Effective 15 Oct 2026</span>
       <span class="pill">App ID com.scalar9.slgpa</span>
     </div>
   </div>
@@ -432,6 +439,7 @@
     <a class="chip" href="#children">Age</a>
     <a class="chip" href="#changes">Changes</a>
     <a class="chip" href="#terms">What the labels mean</a>
+    <a class="chip" href="#legal-basis">Legal basis &amp; rights</a>
   </div>
 </nav>
 
@@ -442,8 +450,8 @@
       <span class="section-num">§1</span>
       <h2>Who this covers</h2>
     </div>
-    <p>GPA Sri Lanka is a GPA calculator for Sri Lankan university students — you pick your university and degree, enter module grades, and get a live GPA estimate. This policy covers the Android app (package <code>com.scalar9.slgpa</code>) and its web build. It's written by the person who builds the app, for the people who use it — plainly, and limited to what the app actually does.</p>
-    <p>GPA Sri Lanka is an independent app. It is not run by, endorsed by, or connected to any university, and nothing it shows or exports is an official result. <a href="#terms">§14</a> explains the labels the app uses, including “self-reported” and “verified”.</p>
+    <p>SL GPA is a GPA calculator for Sri Lankan university students — you pick your university and degree, enter module grades, and get a live GPA estimate. This policy covers the Android app (package <code>com.scalar9.slgpa</code>) and its web build. It's written by the person who builds the app, for the people who use it — plainly, and limited to what the app actually does.</p>
+    <p>SL GPA is an independent app. It is not run by, endorsed by, or connected to any university, and nothing it shows or exports is an official result. <a href="#terms">§14</a> explains the labels the app uses, including “self-reported” and “verified”.</p>
   </section>
 
   <section id="collect">
@@ -471,7 +479,7 @@
       </div>
       <div class="fact-card">
         <span class="k">If you complete your profile</span>
-        <span class="v">Your full name, name with initials, registration number and gender (male or female), and — optionally — the day and month of your birthday. We never ask for your year of birth.</span>
+        <span class="v">Your full name, name with initials, registration number and gender (male or female). Optionally: a short display name made from your own name, your batch (the academic year or intake you enrolled in), and the day and month of your birthday. We never ask for your year of birth.</span>
       </div>
       <div class="fact-card">
         <span class="k">If you submit a transcript</span>
@@ -483,7 +491,7 @@
       </div>
       <div class="fact-card">
         <span class="k">Kept on your device only</span>
-        <span class="v">Your theme choice, whether you've seen the introduction, and which Opportunities items this device has already shown you. None of it is sent to us.</span>
+        <span class="v">Your theme choice, whether you've seen the introduction, and which Opportunities items this device has already shown you. None of it is sent to us, though your phone's own backup may copy it to your Google account (§3).</span>
       </div>
     </div>
     <p style="margin-top:0.9rem">We do not collect your location, contacts, NIC number, year of birth, or advertising ID, and the app contains no advertising SDK and no third-party analytics tracker.</p>
@@ -494,7 +502,8 @@
       <span class="section-num">§3</span>
       <h2>Guest mode vs. a signed-in account</h2>
     </div>
-    <p>You can use the entire GPA calculator, the planner and the result export without ever signing in. As a guest, every result you save is written only to your device's local storage — it never touches our servers. Uninstall the app, or clear its storage, and it's gone.</p>
+    <p>You can use the entire GPA calculator, the planner and the result export without ever signing in. As a guest, every result you save is written only to your device's local storage — it never touches our servers. Uninstall the app, or clear its storage, and it's gone from the device.</p>
+    <p><strong>Your phone's backup.</strong> If your phone backs up apps to your Google account (Android's own backup, which you control in your phone's settings), what SL GPA keeps on the device is included: a guest's saved results, settings such as the theme, and, if you are signed in, your sign-in session — your sign-in email and name, and your verified university email. Android restores it when you reinstall SL GPA or set up a new phone. That backup is stored in your Google account under Google's terms; we cannot read it, and nothing in it reaches our servers. To stop it, turn off app backup in your phone's settings; to remove a copy already made, delete the backup in your Google account.</p>
     <p>If you sign in, your results are stored in our database instead, scoped to your account by row-level security — no other account, including other signed-in users, can read or write your rows. If you save results as a guest and later sign in, those local results are uploaded once, at that point, and nowhere else.</p>
     <p>Even as a guest, the app downloads public catalog data (universities, degrees, modules, grading scales) from our servers. Like any internet service, our hosting provider sees the network address those requests come from.</p>
   </section>
@@ -513,7 +522,7 @@
         <li>Never used to send you email from us.</li>
       </ul>
     </div>
-    <p>Once you complete your profile, your full name, name with initials, registration number and university are locked, so a verified profile can't later be rewritten into someone else's. If one of them is wrong, email us and we'll correct it.</p>
+    <p>Once you complete your profile, your full name, name with initials, registration number, gender and university are locked, so a completed profile can't later be rewritten into someone else's. If one of them is wrong, email us and we'll correct it. A display name and a batch are not locked: you can change or clear either on your profile at any time. A display name can only use words from your own name.</p>
   </section>
 
   <section id="transcript">
@@ -527,12 +536,15 @@
       <li>If the check passes, the modules and grades read from the transcript become your checked record, shown to you under “My record”.</li>
       <li>We count your attempts per hour and per day to limit abuse.</li>
     </ul>
+    <p><strong>Result sheets for one subject.</strong> Instead of a transcript you can submit a result sheet your university published for a single subject — a list of students' registration or index numbers with their grades. To find your row, your registration number and, if you added one to your profile, your exam index number are sent to Google with the file. Only the row carrying one of your numbers is read into our database; no other student's number or grade on the sheet is kept by us. A result sheet prints no cumulative GPA and usually no names, so this check is narrower than a transcript check: it compares your number, the subject and the grade, and nothing else. We also keep a count of how many other accounts have submitted the identical file.</p>
+    <p>The exam index number is optional, is entered by you, and is not checked with your university. Once your profile is complete it cannot be changed after it is saved.</p>
     <div class="callout">
       <span class="callout-title">Read this before you upload</span>
       <ul>
-        <li><strong>Your transcript may show your NIC number.</strong> We do not save it, but the whole document — including anything printed on it — is sent to Google to be read. If you can, cover or crop your NIC before uploading.</li>
+        <li><strong>A result sheet shows other students.</strong> We keep only your own row, but the whole sheet — every student's number and grade on it — is sent to Google to be read, on the terms described below.</li>
+        <li><strong>The whole page is sent to Google.</strong> We keep only the modules, grades and student details listed above, but everything printed on the document is sent to Google to be read. A transcript lists your modules, grades and student number; if yours shows anything else you would rather not send, cover or crop it before uploading.</li>
         <li><strong>How Google handles the document.</strong> At the date of this policy we use the Gemini API's unpaid tier. Under Google's terms for that tier, Google may use what is sent to improve its products, and human reviewers may read it. We intend to move to the paid tier, where it is not used that way, and will update this page when we do.</li>
-        <li><strong>Your university.</strong> By submitting, you authorise us to confirm those results with your university, and a forged or altered document may be reported to it. At the date of this policy we have no arrangement with any university and have done neither.</li>
+        <li><strong>Your university.</strong> By submitting, you agree that a forged or altered document may be reported to your university. Where we have an arrangement with your university to confirm results, the upload screen says so, and by submitting you also authorise us to confirm those results with it. Where we have no such arrangement, the screen does not ask, and we do not contact your university to confirm results.</li>
         <li>A confirmed mismatch can lead to your account being permanently closed.</li>
       </ul>
     </div>
@@ -549,11 +561,11 @@
       <ul>
         <li>The app uses your <strong>university, degree, year of study and gender</strong> to choose which items you see. This includes sponsored offers and adverts.</li>
         <li><strong>The matching happens on your device.</strong> The app downloads the board and filters it locally. We do not tell an advertiser or poster who you are, what you saw, or that you matched.</li>
-        <li>Gender is required to complete a profile for this reason. It is limited to male or female, can be changed later, and is not shown to other users.</li>
+        <li>Gender is required to complete a profile for this reason. It is limited to male or female, is locked with the rest of your profile once you complete it, and is not shown to other users.</li>
         <li>There is no advertising SDK in the app and no advertising profile of you is built or shared.</li>
       </ul>
     </div>
-    <p>Tapping an item opens its link in your browser. From there you are on someone else's website, under their privacy policy; an affiliate link may tell that site you came from GPA Sri Lanka. An item's picture is loaded from the address its poster supplied, which involves an ordinary web request to that host.</p>
+    <p>Tapping an item opens its link in your browser. From there you are on someone else's website, under their privacy policy; an affiliate link may tell that site you came from SL GPA. An item's picture is loaded from the address its poster supplied, which involves an ordinary web request to that host.</p>
     <p>The list of items you've already seen (used for the “New” badge) stays on your device. <strong>Reporting an item is the one action that tells us which item you looked at</strong> — the report is stored with your account so we can act on it and stop duplicates.</p>
   </section>
 
@@ -565,6 +577,7 @@
     <p>You can export a saved result as an image or a PDF. The file is built on your device and handed to your phone's own share sheet; it goes only where you choose to send it, and we do not receive a copy.</p>
     <ul>
       <li>An export shows your name (if you're signed in and have one on your profile), your university, degree, GPA and — if you include them — your modules and grades.</li>
+      <li>If you have set a display name, an exported image shows it in place of your full name. A PDF does not use the display name.</li>
       <li>A photo you add to an export is used on your device only. It is never uploaded to us and is discarded when you close the export sheet.</li>
       <li>Every export is marked as self-reported and “Not issued by the university” (see §14). Please don't remove those marks or present an export as an official document.</li>
     </ul>
@@ -579,11 +592,13 @@
       <li>Calculate and display your GPA and classification, using the grading scale your faculty publishes.</li>
       <li>Keep your saved results in sync across the devices you're signed in on.</li>
       <li>Show your verification status, and open the parts of the app that depend on it.</li>
+      <li>Put your display name, if you set one, on the result images you export (§7).</li>
       <li>Check a transcript you submit against your degree's published module list, and keep an audit trail of that check.</li>
       <li>Choose the opportunities, internships and offers you see, including sponsored offers and adverts (§6).</li>
       <li>Fix the course catalog and remove bad board items when you report them.</li>
       <li>Detect and prevent abuse, such as forged transcripts or one registration number claimed by two accounts.</li>
     </ul>
+    <p><strong>Your batch is not used for anything yet.</strong> It is optional, and we ask for it ahead of three planned uses: choosing the offers you see (sponsored ones included), comparing results within a batch, and matching results that a university may one day send us directly. None of these is in the app today, and no university sends us anything. If one is added, this page changes first (§13).</p>
     <p>We do not sell your data, and we do not use your grades to target adverts.</p>
   </section>
 
@@ -597,7 +612,7 @@
       <li><strong>Supabase</strong> hosts our database, authentication and server functions. Your account data and saved results are stored on their infrastructure, under our access controls.</li>
       <li><strong>Google</strong> (sign-in) and <strong>Microsoft</strong> (university email verification) process those steps under their own privacy policies.</li>
       <li><strong>Google's Gemini API</strong> reads a transcript you submit — see §5, including how Google may use it.</li>
-      <li><strong>Resend</strong> delivers an email to us when a report is filed. That email names the course or item reported; it does not contain your identity or the note you typed.</li>
+      <li><strong>Resend</strong> delivers an email to us when a report is filed. That email names the course or item reported; it does not contain your identity or the note you typed. The one exception is a message you send us from <strong>Settings → Report a problem</strong>: that email carries the message you wrote and your sign-in email address, so that we can reply to you. A copy of the message is also kept with your account.</li>
     </ul>
     <p>We may also disclose information where the law requires it, and — only as described in §5 — to your university in connection with a transcript you submitted.</p>
   </section>
@@ -607,12 +622,15 @@
       <span class="section-num">§10</span>
       <h2>Retention &amp; deletion</h2>
     </div>
-    <p>Guest data lives only on your device, for as long as the app is installed and its storage isn't cleared — that's within your control at all times, no request to us needed.</p>
-    <p>A signed-in account's data — profile, verification status, saved results, checked record and reports you filed — is kept until you ask us to remove it. Self-service account deletion isn't built into the app yet; until it is, email us and we'll delete your account and its data.</p>
+    <p>Guest data lives only on your device, for as long as the app is installed and its storage isn't cleared — that's within your control at all times, no request to us needed. A copy your phone backed up to your Google account (§3) stays there until you delete it or the backup expires under Google's rules.</p>
+    <p>A signed-in account's data — profile, verification status, saved results, checked record and reports you filed — is kept until you delete your account.</p>
+    <p><strong>To delete your account, open Settings → Delete account in the app.</strong> It is deleted as soon as you confirm: there is no waiting period, and it cannot be undone. If your copy of the app doesn't show that option, or you no longer have the app installed, email us from the address you sign in with and we will delete it for you. Email requests are handled by hand, as soon as possible; we can't promise a timeframe, because it depends on how many requests there are, but every request is handled and we email that address when it is done.</p>
+    <p>Deleting your account removes, from our servers: your saved results; your profile, verified university email and verification status; your checked record; the reports you filed and the messages you sent from “Report a problem”; the log of your transcript-check attempts; the record of any transcript check that was rejected; and the sign-in itself. Signing in again with the same Google account starts a new, empty account.</p>
     <div class="callout">
       <span class="callout-title">What deleting your account does not remove</span>
-      <p>If you have submitted a transcript, one record of that submission is kept after your account is deleted: the academic details read from the document — including the name and registration number printed on it — and a fingerprint of the file. The link to your account is severed, but <strong>this record still identifies you</strong>. Deleting your account is not the same as deleting all of your data.</p>
-      <p>It is kept as the audit trail behind a checked-record status, so that a check we made can still be accounted for afterwards and a rejected document can't simply be resubmitted under a new account. If you want this record removed as well, say so in your deletion request and we will remove it.</p>
+      <p>If you have submitted a transcript, one record of each submission that was not rejected is kept after your account is deleted: the academic details read from the document — including the name and registration number printed on it — a fingerprint of the file, and the outcome of the check. The link to your account is severed, but <strong>this record still identifies you</strong>. Deleting your account is not the same as deleting all of your data.</p>
+      <p>It is kept as the audit trail behind a checked-record status, so that a check we made can still be accounted for afterwards. If you want this record removed as well, ask us and we will remove it — before you delete, from <strong>Settings → Report a problem</strong> (choose “Delete my account or data”), or by email afterwards, quoting your registration number.</p>
+      <p>Four more things outlast the account. A backup of the database is made every day and kept for up to 90 days, so a backup made before you deleted still contains your account until it expires. An email already delivered to us — a “Report a problem” message, with your sign-in address — stays in our inbox. SL GPA stays listed among the apps connected to your Google account, and to your university Microsoft account if you linked one, until you remove it there. And a backup your phone made of the app (§3) is not reached: we cannot see or delete it, but you can, in your Google account.</p>
     </div>
     <p>Anything already sent to an outside service — for example a transcript read by Google (§5) — is held under that service's own retention rules, which we can't shorten.</p>
   </section>
@@ -630,7 +648,7 @@
       <span class="section-num">§12</span>
       <h2>Age</h2>
     </div>
-    <p>GPA Sri Lanka is built for enrolled university students. It isn't directed at children, and we don't knowingly collect data from anyone below the minimum age to hold a university-issued email address.</p>
+    <p>SL GPA is built for enrolled university students. It isn't directed at children, and we don't knowingly collect data from anyone below the minimum age to hold a university-issued email address.</p>
   </section>
 
   <section id="changes">
@@ -639,7 +657,11 @@
       <h2>Changes to this policy</h2>
     </div>
     <p>If what the app collects or how it's used changes, this page changes with it, and the effective date at the top updates. We won't widen what we collect without reflecting it here first.</p>
-    <p><strong>Changed on 8 October 2026:</strong> gender is now required to complete a profile and is used to choose internships and offers, including sponsored ones (the earlier version said the app had no adverts); added transcript checks' use of Google's unpaid tier, the Opportunities board, reports, exports, and the glossary in §14.</p>
+    <p><strong>Changed on 8 October 2026:</strong> gender is now locked once a profile is completed, like the name and registration number (the earlier version said it could be changed later); gender is now required to complete a profile and is used to choose internships and offers, including sponsored ones (the earlier version said the app had no adverts); added transcript checks' use of Google's unpaid tier, the Opportunities board, reports, exports, and the glossary in §14; added “Report a problem” in Settings, which emails us your message and your sign-in address (§9).</p>
+    <p><strong>Changed on 12 October 2026:</strong> you can now delete your account yourself, in Settings → Delete account (the earlier version said to ask us); §10 now lists what that removes, and adds that daily backups are kept for up to 90 days, that emails already delivered to us are not deleted, and that the app stays connected in your Google or Microsoft account until you remove it there; the record of a transcript check that was rejected is now deleted with the account; email deletion requests are handled as soon as possible, with an email when done; added §15, on the legal basis for what we hold and your rights; §5 now covers result sheets for a single subject and the optional exam index number, and “Record checked” and “Semester N verified” in §14 now require every compulsory module of a semester.</p>
+    <p><strong>Changed on 13 October 2026:</strong> a profile can now hold an optional display name, shown on exported result images in place of the full name (§7), and an optional batch, which is not used for anything yet (§8). Neither is locked with the rest of the profile.</p>
+    <p><strong>Changed on 14 October 2026:</strong> the status shown once a profile is completed is now “Profile complete” (it read “Verified”, which claimed more than was checked); §14 says so.</p>
+    <p><strong>Changed on 15 October 2026:</strong> §3 now says that your phone's own backup can copy what the app keeps on the device, including your sign-in session, to your Google account (the earlier version said it never left the device), and §10 that deleting your account does not reach that copy; §5 no longer says a transcript may show your NIC number, and now says the upload screen asks you to authorise us to confirm results with your university only where we have an arrangement with it.</p>
   </section>
 
   <section id="terms">
@@ -665,7 +687,7 @@
       <dd>The GPA across every graded module, and the GPA of one semester's modules. Both are estimates from self-reported grades.</dd>
 
       <dt>Classification</dt>
-      <dd>The class (for example First Class or Second Upper) that the estimated GPA falls into, using the university's own thresholds where we hold them and a general Sri Lankan scale where we don't. It is an indication, not an award.</dd>
+      <dd>The class (for example First Class or Second Class (Upper)) that the estimated GPA falls into, using the university's own thresholds where we hold them and a general Sri Lankan scale where we don't. It is an indication, not an award.</dd>
 
       <dt>Unverified</dt>
       <dd>A signed-in account that has not linked a university email.</dd>
@@ -673,14 +695,17 @@
       <dt>Email verified</dt>
       <dd>The account has linked a Microsoft account whose email address belongs to a university we support. It shows the person controls a university mailbox. It says nothing about their grades.</dd>
 
-      <dt>Verified (profile complete)</dt>
-      <dd>Email verified, and the student has entered and locked their name and registration number. Those details are the student's own statement; we have not checked them with the university.</dd>
+      <dt>Profile complete</dt>
+      <dd>Email verified, and the student has entered and locked their name and registration number. Those details are the student's own statement; we have not checked them with the university. This is why the app never shows “Verified” on its own: the word always says what was checked — the email, or results.</dd>
+
+      <dt>“N subjects verified”</dt>
+      <dd>Shown on the home screen in place of “Profile complete” once at least one module is in the student's checked record but no whole semester is yet. It counts the modules that passed our automated check. It is not “Record checked”, and it opens nothing further on the Opportunities board.</dd>
 
       <dt>Record checked</dt>
-      <dd>The student has submitted a transcript for at least one semester and it passed our automated check: the modules read from it match that degree's published module list. It is our check of a document the student supplied — not confirmation from the university.</dd>
+      <dd>Every compulsory module of at least one semester of the student's degree has passed our automated check — from a transcript, or from result sheets submitted one subject at a time. For a transcript, the modules read from it match that degree's published module list; for a result sheet, the row carrying the student's own number does. It is our check of a document the student supplied — not confirmation from the university.</dd>
 
       <dt>“Semester N verified” / “Results verified”</dt>
-      <dd>Every module of that semester in the student's checked record came from a transcript that passed the check. On the home screen, “Results verified” means every graded module in the calculator sits in such a semester.</dd>
+      <dd>Every compulsory module that degree lists for that semester is in the student's checked record, each from a transcript or result sheet that passed the check. A single module checked on its own is marked “Verified” on its own row and does not make its semester verified. On the home screen, “Results verified” means every graded module in the calculator sits in such a semester.</dd>
 
       <dt>Self-reported · Verified (on an export)</dt>
       <dd>Stricter than the above: every module and grade shown matches, letter for letter, the student's checked record. The grades are still the student's own entries, and the export is still not issued by the university.</dd>
@@ -695,8 +720,24 @@
       <dd>On an Opportunities item: a commercial offer where we may earn a commission if you use the link. Both labels are stated in words on the card, before you tap.</dd>
 
       <dt>Guest</dt>
-      <dd>Using the app without signing in. Everything stays on the device.</dd>
+      <dd>Using the app without signing in. Nothing is sent to us; your phone's own backup may copy the app's data to your Google account (§3).</dd>
     </dl>
+  </section>
+
+  <section id="legal-basis">
+    <div class="section-head">
+      <span class="section-num">§15</span>
+      <h2>Legal basis and your rights</h2>
+    </div>
+    <p>SL GPA is run by an individual developer in Sri Lanka, who is the controller of the personal data described here. This section says what we rely on under Sri Lanka's Personal Data Protection Act, No. 9 of 2022.</p>
+    <ul>
+      <li><strong>To give you the service you asked for:</strong> your sign-in, your saved results, your checked record, and answering a message you send us.</li>
+      <li><strong>With your consent:</strong> verifying a university email, the details you enter on your profile — including gender, which is used to choose the internships and offers you see, sponsored ones included (§6), and an optional display name and batch (§7, §8) — your birthday, and submitting a transcript (§5). Each of these is optional, and the app says what it is for at the point you give it.</li>
+      <li><strong>For our legitimate interest in preventing abuse and accounting for our checks:</strong> locking a completed profile, refusing a registration number already in use, counting transcript-check attempts, keeping the record of a transcript check that was not rejected (§10), and acting on reports.</li>
+    </ul>
+    <p><strong>Where your data goes.</strong> None of it is stored in Sri Lanka. Our database is hosted by Supabase in India; Google, Microsoft, Resend and GitHub (which holds our backups) process data in other countries, including the United States (§9).</p>
+    <p><strong>Automated checks.</strong> A transcript check is decided by our software, without a person. If you think an outcome is wrong, ask us and a person will review it.</p>
+    <p><strong>Your rights.</strong> You can ask us for a copy of the data we hold about you, to correct it, to delete it (§10), or to review an automated outcome, and you can withdraw consent by deleting your account. A display name or a batch can be cleared on your profile at any time, without deleting anything else. Use <strong>Settings → Report a problem</strong>, or email the address below from the address you sign in with. We handle requests by hand, as soon as possible, and reply by email. If you are not satisfied with our answer, you can complain to the Data Protection Authority of Sri Lanka.</p>
   </section>
 
 </main>
@@ -705,7 +746,7 @@
   <div class="contact-card">
     <div>
       <h3>Questions, or a deletion request?</h3>
-      <p>One inbox, read by the person who builds the app.</p>
+      <p>One inbox, read by the person who builds the app. Signed in? Settings → Report a problem reaches the same inbox. To delete your account yourself, use Settings → Delete account.</p>
     </div>
     <a class="contact-link" href="mailto:slgpa.app@gmail.com">slgpa.app@gmail.com</a>
   </div>
@@ -713,8 +754,8 @@
   <p class="disclaimer"><strong>Note on this document:</strong> this policy describes what the app actually does today, as accurately as we can make it. It is not a substitute for legal advice, and hasn't been reviewed by a lawyer.</p>
 
   <div class="foot-meta">
-    <span>GPA Sri Lanka</span>
-    <span>Last updated 2026-10-08</span>
+    <span>SL GPA</span>
+    <span>Last updated 2026-10-15</span>
   </div>
 </footer>
 </body>
