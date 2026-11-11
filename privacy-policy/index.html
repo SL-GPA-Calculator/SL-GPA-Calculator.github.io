@@ -27,9 +27,11 @@
   Published 2026-10-15 at the owner's direction, BEFORE a build with the
   Delete account screen is what students can install: section 10 names the
   option, and its own fallback ("If your copy of the app doesn't show that
-  option ... email us") covers an older build until one ships.
-  Section 5's statement about the Gemini tier must be changed the day
-  billing is set up. Sections 6 and 14 restate what the app's own labels
+  option ... email us") covers an older build until one ships. Republished
+  2026-11-11, when release 1 (1.0.0) went to Play's internal testing track.
+  Section 5's statement about the Gemini tier names the paid tier (billing
+  linked 2026-11-09); if the project ever goes back to the unpaid tier, it
+  must change the same day. Sections 6 and 14 restate what the app's own labels
   say; change a label and they must follow.
 
   Not reviewed by a lawyer - see the note in the footer.
@@ -417,7 +419,7 @@
     <h1>Privacy Policy</h1>
     <p class="lede">What SL GPA collects, why, and how it's kept — written to match exactly what the app does, not a template.</p>
     <div class="meta-row">
-      <span class="pill">Effective 15 Oct 2026</span>
+      <span class="pill">Effective 11 Nov 2026</span>
       <span class="pill">App ID com.scalar9.slgpa</span>
     </div>
   </div>
@@ -440,6 +442,8 @@
     <a class="chip" href="#changes">Changes</a>
     <a class="chip" href="#terms">What the labels mean</a>
     <a class="chip" href="#legal-basis">Legal basis &amp; rights</a>
+    <a class="chip" href="#notifications">Notifications</a>
+    <a class="chip" href="#crash-reports">Crash reports</a>
   </div>
 </nav>
 
@@ -463,7 +467,7 @@
     <div class="two-col">
       <div class="fact-card">
         <span class="k">If you never sign in</span>
-        <span class="v">Nothing about you reaches us. Guest results live only in your device's local app storage.</span>
+        <span class="v">Nothing about you reaches us, apart from crash reports (§17), which aren't linked to you. Guest results live only in your device's local app storage.</span>
       </div>
       <div class="fact-card">
         <span class="k">If you sign in</span>
@@ -475,7 +479,7 @@
       </div>
       <div class="fact-card">
         <span class="k">If you verify your university email</span>
-        <span class="v">The university email address Microsoft returns when you link your university account, and the time it was verified. See §4.</span>
+        <span class="v">The university email address Microsoft returns when you link your university account, and the time it was verified. After that, the degree you choose as yours at that university. See §4.</span>
       </div>
       <div class="fact-card">
         <span class="k">If you complete your profile</span>
@@ -490,8 +494,12 @@
         <span class="v">For a wrong or missing course, or a problem with an item on the Opportunities board: what you reported, the reason, any note you type, and your verification level at the time.</span>
       </div>
       <div class="fact-card">
+        <span class="k">If the app breaks</span>
+        <span class="v">A crash report: the type of error, where in the app's code it happened, and details of the phone and the app, such as the model, Android version and language. It is not linked to your account, and you can turn it off in Settings (§17).</span>
+      </div>
+      <div class="fact-card">
         <span class="k">Kept on your device only</span>
-        <span class="v">Your theme choice, whether you've seen the introduction, and which Opportunities items this device has already shown you. None of it is sent to us, though your phone's own backup may copy it to your Google account (§3).</span>
+        <span class="v">Your theme choice, whether you've seen the introduction, which Opportunities items this device has already shown you, your notification settings, whether crash reports are on, and a short record of the notifications the app has worked out (§16). None of it is sent to us, and the app keeps it out of your phone's backup (§3).</span>
       </div>
     </div>
     <p style="margin-top:0.9rem">We do not collect your location, contacts, NIC number, year of birth, or advertising ID, and the app contains no advertising SDK and no third-party analytics tracker.</p>
@@ -503,7 +511,7 @@
       <h2>Guest mode vs. a signed-in account</h2>
     </div>
     <p>You can use the entire GPA calculator, the planner and the result export without ever signing in. As a guest, every result you save is written only to your device's local storage — it never touches our servers. Uninstall the app, or clear its storage, and it's gone from the device.</p>
-    <p><strong>Your phone's backup.</strong> If your phone backs up apps to your Google account (Android's own backup, which you control in your phone's settings), what SL GPA keeps on the device is included: a guest's saved results, settings such as the theme, and, if you are signed in, your sign-in session — your sign-in email and name, and your verified university email. Android restores it when you reinstall SL GPA or set up a new phone. That backup is stored in your Google account under Google's terms; we cannot read it, and nothing in it reaches our servers. To stop it, turn off app backup in your phone's settings; to remove a copy already made, delete the backup in your Google account.</p>
+    <p><strong>Your phone's backup.</strong> SL GPA tells Android to leave it out of your phone's backup to your Google account and out of a transfer to a new phone. What it keeps on the device — a guest's saved results, settings such as the theme, and, if you are signed in, your sign-in session — stays on that device. After a reinstall or on a new phone you sign in again, and a guest's results start empty.</p>
     <p>If you sign in, your results are stored in our database instead, scoped to your account by row-level security — no other account, including other signed-in users, can read or write your rows. If you save results as a guest and later sign in, those local results are uploaded once, at that point, and nowhere else.</p>
     <p>Even as a guest, the app downloads public catalog data (universities, degrees, modules, grading scales) from our servers. Like any internet service, our hosting provider sees the network address those requests come from.</p>
   </section>
@@ -523,6 +531,7 @@
       </ul>
     </div>
     <p>Once you complete your profile, your full name, name with initials, registration number, gender and university are locked, so a completed profile can't later be rewritten into someone else's. If one of them is wrong, email us and we'll correct it. A display name and a batch are not locked: you can change or clear either on your profile at any time. A display name can only use words from your own name.</p>
+    <p>You can verify one university per account. Once you have, you choose your degree at that university. The app uses it to decide which results you can edit and check, and which items you see on the Opportunities board (§6). You can change it at any time until some of your results have been checked. After that, you can switch only to a degree that includes every module already checked, and your checked results move with you. For any other change of degree or university, contact us from <strong>Settings → Report a problem</strong> and we'll correct it.</p>
   </section>
 
   <section id="transcript">
@@ -534,7 +543,7 @@
     <ul>
       <li><strong>The file is not stored by us.</strong> We keep a fingerprint of it (so the same document can be recognised if it is submitted again), the details read from it, and the outcome.</li>
       <li>If the check passes, the modules and grades read from the transcript become your checked record, shown to you under “My record”.</li>
-      <li>We count your attempts per hour and per day to limit abuse.</li>
+      <li>We count your attempts per day to limit abuse.</li>
     </ul>
     <p><strong>Result sheets for one subject.</strong> Instead of a transcript you can submit a result sheet your university published for a single subject — a list of students' registration or index numbers with their grades. To find your row, your registration number and, if you added one to your profile, your exam index number are sent to Google with the file. Only the row carrying one of your numbers is read into our database; no other student's number or grade on the sheet is kept by us. A result sheet prints no cumulative GPA and usually no names, so this check is narrower than a transcript check: it compares your number, the subject and the grade, and nothing else. We also keep a count of how many other accounts have submitted the identical file.</p>
     <p>The exam index number is optional, is entered by you, and is not checked with your university. Once your profile is complete it cannot be changed after it is saved.</p>
@@ -543,7 +552,7 @@
       <ul>
         <li><strong>A result sheet shows other students.</strong> We keep only your own row, but the whole sheet — every student's number and grade on it — is sent to Google to be read, on the terms described below.</li>
         <li><strong>The whole page is sent to Google.</strong> We keep only the modules, grades and student details listed above, but everything printed on the document is sent to Google to be read. A transcript lists your modules, grades and student number; if yours shows anything else you would rather not send, cover or crop it before uploading.</li>
-        <li><strong>How Google handles the document.</strong> At the date of this policy we use the Gemini API's unpaid tier. Under Google's terms for that tier, Google may use what is sent to improve its products, and human reviewers may read it. We intend to move to the paid tier, where it is not used that way, and will update this page when we do.</li>
+        <li><strong>How Google handles the document.</strong> We use the Gemini API's paid tier. Under Google's terms for that tier, Google does not use what is sent to improve its products. It keeps it for a limited time only to detect misuse of the service and to meet legal requirements, and then deletes it.</li>
         <li><strong>Your university.</strong> By submitting, you agree that a forged or altered document may be reported to your university. Where we have an arrangement with your university to confirm results, the upload screen says so, and by submitting you also authorise us to confirm those results with it. Where we have no such arrangement, the screen does not ask, and we do not contact your university to confirm results.</li>
         <li>A confirmed mismatch can lead to your account being permanently closed.</li>
       </ul>
@@ -592,10 +601,12 @@
       <li>Calculate and display your GPA and classification, using the grading scale your faculty publishes.</li>
       <li>Keep your saved results in sync across the devices you're signed in on.</li>
       <li>Show your verification status, and open the parts of the app that depend on it.</li>
-      <li>Put your display name, if you set one, on the result images you export (§7).</li>
+      <li>Put your display name, if you set one, on the result images you export (§7) and in your birthday greeting (§16).</li>
+      <li>Show the notifications you allow on your phone: new opportunities in the evening, a weekly reminder to verify your results, and a birthday greeting (§16).</li>
       <li>Check a transcript you submit against your degree's published module list, and keep an audit trail of that check.</li>
       <li>Choose the opportunities, internships and offers you see, including sponsored offers and adverts (§6).</li>
       <li>Fix the course catalog and remove bad board items when you report them.</li>
+      <li>Find and fix what breaks in the app, from crash reports (§17).</li>
       <li>Detect and prevent abuse, such as forged transcripts or one registration number claimed by two accounts.</li>
     </ul>
     <p><strong>Your batch is not used for anything yet.</strong> It is optional, and we ask for it ahead of three planned uses: choosing the offers you see (sponsored ones included), comparing results within a batch, and matching results that a university may one day send us directly. None of these is in the app today, and no university sends us anything. If one is added, this page changes first (§13).</p>
@@ -611,8 +622,9 @@
     <ul>
       <li><strong>Supabase</strong> hosts our database, authentication and server functions. Your account data and saved results are stored on their infrastructure, under our access controls.</li>
       <li><strong>Google</strong> (sign-in) and <strong>Microsoft</strong> (university email verification) process those steps under their own privacy policies.</li>
-      <li><strong>Google's Gemini API</strong> reads a transcript you submit — see §5, including how Google may use it.</li>
+      <li><strong>Google's Gemini API</strong> reads a transcript you submit, on its paid tier — see §5 for how long Google keeps it.</li>
       <li><strong>Resend</strong> delivers an email to us when a report is filed. That email names the course or item reported; it does not contain your identity or the note you typed. The one exception is a message you send us from <strong>Settings → Report a problem</strong>: that email carries the message you wrote and your sign-in email address, so that we can reply to you. A copy of the message is also kept with your account.</li>
+      <li><strong>Sentry</strong> receives the crash reports the Android app sends when something breaks, and stores them for us in the European Union. A report carries no account, and the app is built to leave out anything you entered (§17).</li>
     </ul>
     <p>We may also disclose information where the law requires it, and — only as described in §5 — to your university in connection with a transcript you submitted.</p>
   </section>
@@ -622,7 +634,7 @@
       <span class="section-num">§10</span>
       <h2>Retention &amp; deletion</h2>
     </div>
-    <p>Guest data lives only on your device, for as long as the app is installed and its storage isn't cleared — that's within your control at all times, no request to us needed. A copy your phone backed up to your Google account (§3) stays there until you delete it or the backup expires under Google's rules.</p>
+    <p>Guest data lives only on your device, for as long as the app is installed and its storage isn't cleared — that's within your control at all times, no request to us needed.</p>
     <p>A signed-in account's data — profile, verification status, saved results, checked record and reports you filed — is kept until you delete your account.</p>
     <p><strong>To delete your account, open Settings → Delete account in the app.</strong> It is deleted as soon as you confirm: there is no waiting period, and it cannot be undone. If your copy of the app doesn't show that option, or you no longer have the app installed, email us from the address you sign in with and we will delete it for you. Email requests are handled by hand, as soon as possible; we can't promise a timeframe, because it depends on how many requests there are, but every request is handled and we email that address when it is done.</p>
     <p>Deleting your account removes, from our servers: your saved results; your profile, verified university email and verification status; your checked record; the reports you filed and the messages you sent from “Report a problem”; the log of your transcript-check attempts; the record of any transcript check that was rejected; and the sign-in itself. Signing in again with the same Google account starts a new, empty account.</p>
@@ -630,9 +642,10 @@
       <span class="callout-title">What deleting your account does not remove</span>
       <p>If you have submitted a transcript, one record of each submission that was not rejected is kept after your account is deleted: the academic details read from the document — including the name and registration number printed on it — a fingerprint of the file, and the outcome of the check. The link to your account is severed, but <strong>this record still identifies you</strong>. Deleting your account is not the same as deleting all of your data.</p>
       <p>It is kept as the audit trail behind a checked-record status, so that a check we made can still be accounted for afterwards. If you want this record removed as well, ask us and we will remove it — before you delete, from <strong>Settings → Report a problem</strong> (choose “Delete my account or data”), or by email afterwards, quoting your registration number.</p>
-      <p>Four more things outlast the account. A backup of the database is made every day and kept for up to 90 days, so a backup made before you deleted still contains your account until it expires. An email already delivered to us — a “Report a problem” message, with your sign-in address — stays in our inbox. SL GPA stays listed among the apps connected to your Google account, and to your university Microsoft account if you linked one, until you remove it there. And a backup your phone made of the app (§3) is not reached: we cannot see or delete it, but you can, in your Google account.</p>
+      <p>Three more things outlast the account. A backup of the database is made every day and kept for up to 90 days, so a backup made before you deleted still contains your account until it expires. An email already delivered to us — a “Report a problem” message, with your sign-in address — stays in our inbox. SL GPA stays listed among the apps connected to your Google account, and to your university Microsoft account if you linked one, until you remove it there.</p>
     </div>
     <p>Anything already sent to an outside service — for example a transcript read by Google (§5) — is held under that service's own retention rules, which we can't shorten.</p>
+    <p>Crash reports (§17) are not linked to your account, so deleting it does not reach them. Sentry deletes each one after 30 days.</p>
   </section>
 
   <section id="security">
@@ -661,7 +674,13 @@
     <p><strong>Changed on 12 October 2026:</strong> you can now delete your account yourself, in Settings → Delete account (the earlier version said to ask us); §10 now lists what that removes, and adds that daily backups are kept for up to 90 days, that emails already delivered to us are not deleted, and that the app stays connected in your Google or Microsoft account until you remove it there; the record of a transcript check that was rejected is now deleted with the account; email deletion requests are handled as soon as possible, with an email when done; added §15, on the legal basis for what we hold and your rights; §5 now covers result sheets for a single subject and the optional exam index number, and “Record checked” and “Semester N verified” in §14 now require every compulsory module of a semester.</p>
     <p><strong>Changed on 13 October 2026:</strong> a profile can now hold an optional display name, shown on exported result images in place of the full name (§7), and an optional batch, which is not used for anything yet (§8). Neither is locked with the rest of the profile.</p>
     <p><strong>Changed on 14 October 2026:</strong> the status shown once a profile is completed is now “Profile complete” (it read “Verified”, which claimed more than was checked); §14 says so.</p>
+    <p><strong>Changed on 20 October 2026:</strong> added §16, on the app's notifications — an evening reminder about new opportunities, a weekly reminder to verify your results, and a birthday greeting — all worked out and scheduled on your phone; §2 and §8 now mention them.</p>
+    <p><strong>Changed on 30 October 2026:</strong> added §17, on crash reports: when the Android app breaks, it sends a report to Sentry, which is not linked to your account and can be turned off in Settings → Privacy; §2, §8, §9, §10 and §15 now mention them.</p>
     <p><strong>Changed on 15 October 2026:</strong> §3 now says that your phone's own backup can copy what the app keeps on the device, including your sign-in session, to your Google account (the earlier version said it never left the device), and §10 that deleting your account does not reach that copy; §5 no longer says a transcript may show your NIC number, and now says the upload screen asks you to authorise us to confirm results with your university only where we have an arrangement with it.</p>
+    <p><strong>Changed on 6 November 2026:</strong> the app now leaves itself out of your phone's backup and out of a transfer to a new phone, so §3 no longer says that backup copies the app's data, including your sign-in session, to your Google account, and §10 no longer says that deleting your account leaves such a copy behind.</p>
+    <p><strong>Changed on 9 November 2026:</strong> transcript checks now use the Gemini API's paid tier, so §5 no longer says Google may use a submitted document to improve its products or that human reviewers may read it; Google keeps it for a limited time only to detect misuse and meet legal requirements.</p>
+    <p><strong>Changed on 10 November 2026:</strong> once your university email is verified you choose your degree at that university, and it decides which results you can edit and check and which opportunities you see; after some of your results are checked, you can switch only to a degree that includes them, and other changes are made on request. You can verify one university per account. §2 and §4 now say so.</p>
+    <p><strong>Changed on 11 November 2026:</strong> transcript checks are now limited per day only; §5 no longer says we count your attempts per hour.</p>
   </section>
 
   <section id="terms">
@@ -720,7 +739,7 @@
       <dd>On an Opportunities item: a commercial offer where we may earn a commission if you use the link. Both labels are stated in words on the card, before you tap.</dd>
 
       <dt>Guest</dt>
-      <dd>Using the app without signing in. Nothing is sent to us; your phone's own backup may copy the app's data to your Google account (§3).</dd>
+      <dd>Using the app without signing in. Nothing is sent to us, and the app's data stays on the device (§3).</dd>
     </dl>
   </section>
 
@@ -732,12 +751,48 @@
     <p>SL GPA is run by an individual developer in Sri Lanka, who is the controller of the personal data described here. This section says what we rely on under Sri Lanka's Personal Data Protection Act, No. 9 of 2022.</p>
     <ul>
       <li><strong>To give you the service you asked for:</strong> your sign-in, your saved results, your checked record, and answering a message you send us.</li>
-      <li><strong>With your consent:</strong> verifying a university email, the details you enter on your profile — including gender, which is used to choose the internships and offers you see, sponsored ones included (§6), and an optional display name and batch (§7, §8) — your birthday, and submitting a transcript (§5). Each of these is optional, and the app says what it is for at the point you give it.</li>
+      <li><strong>With your consent:</strong> verifying a university email, the details you enter on your profile — including gender, which is used to choose the internships and offers you see, sponsored ones included (§6), and an optional display name and batch (§7, §8) — your birthday, submitting a transcript (§5), and the notifications you allow (§16). Each of these is optional, and the app says what it is for at the point you give it.</li>
       <li><strong>For our legitimate interest in preventing abuse and accounting for our checks:</strong> locking a completed profile, refusing a registration number already in use, counting transcript-check attempts, keeping the record of a transcript check that was not rejected (§10), and acting on reports.</li>
+      <li><strong>For our legitimate interest in keeping the app working:</strong> crash reports (§17). They are on from the first time the app opens, and you can turn them off in Settings at any time.</li>
     </ul>
-    <p><strong>Where your data goes.</strong> None of it is stored in Sri Lanka. Our database is hosted by Supabase in India; Google, Microsoft, Resend and GitHub (which holds our backups) process data in other countries, including the United States (§9).</p>
+    <p><strong>Where your data goes.</strong> None of it is stored in Sri Lanka. Our database is hosted by Supabase in India; Google, Microsoft, Resend and GitHub (which holds our backups) process data in other countries, including the United States (§9). Crash reports are stored by Sentry in the European Union (§17).</p>
     <p><strong>Automated checks.</strong> A transcript check is decided by our software, without a person. If you think an outcome is wrong, ask us and a person will review it.</p>
     <p><strong>Your rights.</strong> You can ask us for a copy of the data we hold about you, to correct it, to delete it (§10), or to review an automated outcome, and you can withdraw consent by deleting your account. A display name or a batch can be cleared on your profile at any time, without deleting anything else. Use <strong>Settings → Report a problem</strong>, or email the address below from the address you sign in with. We handle requests by hand, as soon as possible, and reply by email. If you are not satisfied with our answer, you can complain to the Data Protection Authority of Sri Lanka.</p>
+  </section>
+
+  <section id="notifications">
+    <div class="section-head">
+      <span class="section-num">§16</span>
+      <h2>Notifications</h2>
+    </div>
+    <p>The Android app can show you three kinds of notification. Nothing is shown until you allow the app's notifications on your phone, and each kind can be turned off in <strong>Settings → Notifications</strong> or in your phone's own notification settings.</p>
+    <p><strong>Every notification is worked out and scheduled on your phone.</strong> The app uses no push-messaging service, sends us no device identifier or notification token, and does not tell us when a notification is shown or tapped.</p>
+    <ul>
+      <li><strong>New opportunities, in the evening.</strong> Off until you turn it on. At most once a day, in the evening (Android chooses the exact time, between 6 pm and 11 pm), the app looks at the same Opportunities board you would see, matched to you on your phone as described in §6, and tells you if a section holds something you haven't seen yet. Sponsored and partner offers count only if you also turn on “Include sponsored &amp; partner offers”, and a notification that includes one says so.</li>
+      <li><strong>A weekly reminder to verify your results.</strong> Once your profile is complete, it is on unless you turn it off. If a semester you have fully graded in the calculator is not yet verified in your checked record, the app may remind you in the evening, at most once a week, until that semester is verified, you close the app's “Results out for Semester N?” prompt for it, or you turn the reminder off. It is worked out on your phone from your saved grades and your checked record. It may say that verified results may unlock special offers; that is not a promise of any offer, and it never shows a grade or a GPA.</li>
+      <li><strong>A birthday greeting.</strong> If your profile has your birthday, the app schedules a greeting on your phone for about 8 am on the day, on unless you turn it off. It shows your display name, if you set one — never your full name — and so it can appear on your lock screen.</li>
+    </ul>
+    <p>To check the board or your results in the evening, the app sends the same requests it sends when you open it, signed in as you; our servers see them as ordinary use of your account. When you sign out or delete your account, the app cancels these notifications and removes any that are still showing.</p>
+  </section>
+
+  <section id="crash-reports">
+    <div class="section-head">
+      <span class="section-num">§17</span>
+      <h2>Crash reports</h2>
+    </div>
+    <p>When something in the Android app breaks, or the app stops responding, it can send a crash report to <strong>Sentry</strong>, a service that collects app errors for developers, so that we can find the bug and fix it. Reports are on unless you turn them off, with <strong>Settings → Privacy → Send crash reports</strong>. In the app, that switch says: “Sends the error type, code, stack trace and phone details, such as the model, Android version and language, to Sentry when something breaks. Not linked to your account.”</p>
+    <p><strong>What a report contains.</strong> All of it, not only the examples the switch gives:</p>
+    <ul>
+      <li><strong>The error:</strong> its type, the type of whatever caused it, a code from our server where there is one, and the stack trace — the places in the app's own code that led to it, with the file names of that code — and when it happened. The error's own message is removed, except for a short list of error types whose message the app's code writes itself, never from anything you typed or anything stored in your account.</li>
+      <li><strong>The phone:</strong> its manufacturer, brand and model; whether it is a phone or a tablet, or an emulator; its processor type and number of cores; how much memory it has, how much is free, and whether it is low on memory; its screen orientation; whether it is online; the Android version and build number, and whether the phone is rooted; light or dark mode; and its language, time zone, calendar and whether it uses the 24-hour clock.</li>
+      <li><strong>The app:</strong> its name, version and build, whether it was in the foreground, how much memory it was using, and the version of Dart that runs it.</li>
+      <li><strong>The moments before:</strong> whether the app had just gone to the background or come back, whether the phone had just gone online or offline, and whether it had run low on memory.</li>
+      <li><strong>When the app itself crashes or stops responding</strong>, rather than catching an error and carrying on, Android adds more: the battery level, whether the phone is charging, and the battery's temperature; the screen's size and density; total and free storage; when the phone was last restarted; its chipset, processor speed and the processor types it supports; whether it is on mobile data or Wi-Fi, and what kind (such as 4G); the version of Android's kernel and runtime; when the app started, which permissions it holds, and whether it was installed from an app store; and, if it stopped responding, the place in the app's code where each part of it was at that moment.</li>
+      <li><strong>A random number</strong> made each time the app starts, which only groups the reports from that one run of the app.</li>
+    </ul>
+    <p><strong>What a report never contains:</strong> your name, email address, registration number, grades, or anything else you entered; your account; what you tapped or which screens you opened. Sentry is set not to store the network address a report arrives from, or the rough location that address points to.</p>
+    <p><strong>Not linked to you.</strong> A report carries no account, so we cannot look up the reports from your phone, and deleting your account has none to delete. When the app itself crashes or stops responding, Sentry's software on the phone also attaches a number that identifies this installation of the app; Sentry is set to delete that number when the report arrives, before the report is stored, so no report that is kept carries it. If you write to us about a crash, tell us roughly when it happened and your phone model, and we will look for it that way. Sentry stores reports in the European Union and deletes each one after 30 days.</p>
+    <p><strong>On from the start.</strong> Reports are on from the first time the app opens, before the introduction, so that a crash there is not lost. We rely on our legitimate interest in keeping the app working (§15). Once the switch is off, the app makes no new report, and a report still waiting to be sent (one made while the phone was offline) is deleted. Turning the switch back on works at once, without restarting the app. The web build sends no crash reports.</p>
   </section>
 
 </main>
@@ -755,7 +810,7 @@
 
   <div class="foot-meta">
     <span>SL GPA</span>
-    <span>Last updated 2026-10-15</span>
+    <span>Last updated 2026-11-11</span>
   </div>
 </footer>
 </body>

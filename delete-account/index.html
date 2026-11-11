@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  SL GPA - Delete your account. THIS FILE IS THE SOURCE OF A PUBLISHED PAGE
+  (first published 2026-11-11, with release 1 (1.0.0) on Play's internal
+  testing track).
+
+  Intended address - GitHub Pages, the public repository
+  SL-GPA-Calculator/SL-GPA-Calculator.github.io, as
+  delete-account/index.html, a verbatim copy of this file:
+    https://sl-gpa-calculator.github.io/delete-account/
+
+  That address is what Google Play asks for as the "Delete account URL"
+  (App content > Data safety). Play expects the page to name the app, give
+  the steps, and say what is deleted, what is kept and for how long.
+
+  Editing this file changes nothing on its own: copy it over that
+  index.html and push.
+
+  Sections 3 and 4 restate DeleteAccountScreen.deletedItems / keptItems
+  (lib/features/auth/presentation/screens/delete_account_screen.dart) and
+  section 10 of docs/privacy-policy.html. Change one and the others must
+  follow. supabase/tests/profiles_security.sql PART 23 fails when a new
+  table hangs off an account - that is the moment all three change.
+
+  "Up to 90 days" is .github/workflows/db-backup.yml's retention-days.
+
+  The styles are a copy of docs/privacy-policy.html's.
+
+  Not reviewed by a lawyer - see the note in the footer.
+-->
+<title>Delete your SL GPA account</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #fbfaff;
+    --surface: #ffffff;
+    --surface-alt: #f2ecfb;
+    --border: #e3daf5;
+    --ink: #1f1830;
+    --ink-muted: #6b6178;
+    --accent: #5e35b1;
+    --accent-strong: #4527a0;
+    --accent-on-accent: #ffffff;
+    --chip-bg: #ede7f6;
+    --chip-text: #4527a0;
+    --callout-bg: #f6f1fc;
+    --callout-border: #d9c9f2;
+    --shadow: 0 1px 2px rgba(38, 20, 71, 0.04), 0 6px 20px rgba(38, 20, 71, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16121e;
+      --surface: #1d1727;
+      --surface-alt: #241d30;
+      --border: #362b48;
+      --ink: #ede7f6;
+      --ink-muted: #b3a6c8;
+      --accent: #9575cd;
+      --accent-strong: #d1c4e9;
+      --accent-on-accent: #1f1830;
+      --chip-bg: #2a2138;
+      --chip-text: #d1c4e9;
+      --callout-bg: #221b2e;
+      --callout-border: #3c2f52;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 6px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #16121e;
+    --surface: #1d1727;
+    --surface-alt: #241d30;
+    --border: #362b48;
+    --ink: #ede7f6;
+    --ink-muted: #b3a6c8;
+    --accent: #9575cd;
+    --accent-strong: #d1c4e9;
+    --accent-on-accent: #1f1830;
+    --chip-bg: #2a2138;
+    --chip-text: #d1c4e9;
+    --callout-bg: #221b2e;
+    --callout-border: #3c2f52;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 6px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono {
+    font-family: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+
+  a { color: var(--accent-strong); text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+  a:hover { color: var(--accent); }
+  a:focus-visible, button:focus-visible, .chip:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .band {
+    background: linear-gradient(180deg, var(--surface-alt) 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .band-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 2.25rem;
+  }
+
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mark-glyph {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.65rem;
+    background: var(--accent);
+    color: var(--accent-on-accent);
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    flex: none;
+  }
+
+  .mark-name {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 1.5rem + 1.6vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+
+  .lede {
+    color: var(--ink-muted);
+    font-size: 1.05rem;
+    max-width: 46ch;
+    margin: 0 0 1.4rem;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .pill {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--chip-text);
+    background: var(--chip-bg);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+  }
+
+  nav.toc {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  .toc-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.7rem;
+  }
+
+  .toc-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .chip {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.4rem 0.85rem;
+    text-decoration: none;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .chip:hover {
+    border-color: var(--accent);
+    color: var(--accent-strong);
+  }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.25rem 1.5rem 1rem;
+  }
+
+  section {
+    padding: 1.9rem 0;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 1.25rem;
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .section-num {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    flex: none;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    margin: 1.1rem 0 0.4rem;
+  }
+
+  p { margin: 0 0 0.85rem; max-width: 65ch; }
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol { margin: 0 0 0.85rem; padding-left: 1.3rem; max-width: 65ch; }
+  li { margin-bottom: 0.4rem; }
+  li:last-child { margin-bottom: 0; }
+
+  strong { font-weight: 600; }
+
+  code {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85em;
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 0.3rem;
+    padding: 0.05rem 0.35rem;
+  }
+
+  .callout {
+    background: var(--callout-bg);
+    border: 1px solid var(--callout-border);
+    border-radius: 0.85rem;
+    padding: 1.1rem 1.25rem;
+    margin: 0.9rem 0;
+  }
+
+  .callout p, .callout ul { max-width: none; }
+  .callout ul { padding-left: 1.2rem; }
+
+  .callout-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin-bottom: 0.55rem;
+    display: block;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+
+  @media (max-width: 560px) {
+    .two-col { grid-template-columns: 1fr; }
+  }
+
+  .fact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 0.95rem 1.05rem;
+  }
+
+  .fact-card .k {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .fact-card .v {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 3rem;
+  }
+
+  .contact-card {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .contact-card h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+  .contact-card p { margin: 0; color: var(--ink-muted); max-width: 40ch; }
+
+  .contact-link {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--accent-strong);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .contact-link:hover { border-color: var(--accent); }
+
+  .disclaimer {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    border-left: 3px solid var(--border);
+    padding-left: 0.9rem;
+  }
+
+  .disclaimer strong { color: var(--ink); }
+
+  .foot-meta {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    color: var(--ink-muted);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .chip, a { transition: color 0.15s ease, border-color 0.15s ease; }
+  }
+  dl.terms { margin: 0; max-width: 65ch; }
+  dl.terms dt { font-weight: 700; font-size: 0.98rem; margin-top: 1rem; }
+  dl.terms dt:first-child { margin-top: 0; }
+  dl.terms dd { margin: 0.2rem 0 0; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="band">
+  <div class="band-inner">
+    <div class="mark">
+      <span class="mark-glyph">G</span>
+      <span class="mark-name">SL GPA</span>
+    </div>
+    <h1>Delete your account</h1>
+    <p class="lede">How to delete your SL GPA account and the data held with it — inside the app, or by email if you no longer have it installed.</p>
+    <div class="meta-row">
+      <span class="pill">Applies to the SL GPA app</span>
+      <span class="pill">App ID com.scalar9.slgpa</span>
+    </div>
+  </div>
+</div>
+
+<nav class="toc" aria-label="Section contents">
+  <span class="toc-label">Contents</span>
+  <div class="toc-chips">
+    <a class="chip" href="#in-app">In the app</a>
+    <a class="chip" href="#by-email">By email</a>
+    <a class="chip" href="#deleted">What is deleted</a>
+    <a class="chip" href="#kept">What is kept</a>
+    <a class="chip" href="#some-data">Removing some data only</a>
+    <a class="chip" href="#guests">If you never signed in</a>
+  </div>
+</nav>
+
+<main>
+
+  <section id="in-app">
+    <div class="section-head">
+      <span class="section-num">§1</span>
+      <h2>In the app</h2>
+    </div>
+    <ol>
+      <li>Open SL GPA and sign in with the Google account you used for it.</li>
+      <li>Open the <strong>Profile</strong> tab and tap the settings icon at the top.</li>
+      <li>Under <strong>Account</strong>, tap <strong>Delete account</strong>.</li>
+      <li>Read what is deleted and what is kept, type <strong>DELETE</strong>, and tap <strong>Delete my account</strong>.</li>
+    </ol>
+    <div class="callout">
+      <span class="callout-title">It happens at once</span>
+      <p>Your account is deleted as soon as you confirm. There is no waiting period and it cannot be undone — we cannot bring a deleted account back.</p>
+    </div>
+    <p>If your copy of the app has no <strong>Delete account</strong> option, update it, or use the email route below.</p>
+  </section>
+
+  <section id="by-email">
+    <div class="section-head">
+      <span class="section-num">§2</span>
+      <h2>By email, without the app</h2>
+    </div>
+    <p>Write to <a href="mailto:slgpa.app@gmail.com?subject=Delete%20my%20SL%20GPA%20account">slgpa.app@gmail.com</a>:</p>
+    <ul>
+      <li><strong>Send it from the email address you sign in to SL GPA with</strong> — the address of that Google account. It is how we know the account is yours; we cannot act on a request sent from a different address.</li>
+      <li>Say that you want your SL GPA account deleted.</li>
+      <li>If you have checked a transcript and want that record removed as well (see <a href="#kept">§4</a>), say so and include your registration number.</li>
+    </ul>
+    <p>Requests are handled by hand, by the person who builds the app, as soon as possible. We cannot promise a timeframe — it depends on how many requests there are and how quickly questions are answered — but every request is handled, and <strong>we email that address when your account has been deleted</strong>. We may write to you first if we need to confirm the request is yours.</p>
+  </section>
+
+  <section id="deleted">
+    <div class="section-head">
+      <span class="section-num">§3</span>
+      <h2>What is deleted</h2>
+    </div>
+    <p>Either route removes the same things from our servers:</p>
+    <ul>
+      <li>Your saved results — the degrees, modules and grades you entered, and the GPA calculated from them. The app also removes any copy saved on the device you delete from.</li>
+      <li>Your profile — your name, name with initials, registration number, gender and the day and month of your birthday — together with your verified university email and your verification status.</li>
+      <li>Your checked record: the modules and grades a transcript check confirmed.</li>
+      <li>The record of any transcript check that was rejected — the details read from that document, and the fingerprint of the file.</li>
+      <li>The reports you filed about courses, Opportunities items and your record, and the messages you sent from “Report a problem”.</li>
+      <li>The log of when you attempted a transcript check.</li>
+      <li>Your sign-in itself. Signing in again with the same Google account starts a new, empty account.</li>
+    </ul>
+  </section>
+
+  <section id="kept">
+    <div class="section-head">
+      <span class="section-num">§4</span>
+      <h2>What is kept</h2>
+    </div>
+    <div class="callout">
+      <span class="callout-title">A transcript-check record is kept, and it still identifies you</span>
+      <p>If you checked a transcript, one record of each check that was <strong>not rejected</strong> is kept after your account is deleted: the name and registration number read from the document, its modules and grades, a fingerprint of the file, and the outcome of the check. The link to your account is removed, but <strong>this record still identifies you</strong>. The document itself was never stored.</p>
+      <p>The record of a check that was rejected is not kept: it is deleted with your account (<a href="#deleted">§3</a>).</p>
+      <p>What is kept is the audit trail behind a checked-record status, so that a check we made can still be accounted for afterwards. It is kept until you ask for it to be removed.</p>
+      <p><strong>To have it removed as well:</strong> ask before you delete — in the app, Settings → Report a problem → “Delete my account or data”, and wait for our reply — or say so in your deletion email. If your account is already gone, email us with your registration number.</p>
+    </div>
+    <p>Deleting your account also leaves these in place:</p>
+    <ul>
+      <li><strong>Backups.</strong> A backup of the database is made every day and kept for up to 90 days. A backup made before you deleted your account still contains it until that backup expires.</li>
+      <li><strong>Emails you sent us.</strong> A message sent from “Report a problem” was also delivered to our inbox, with your sign-in email address so that we could reply. Those emails are not deleted with your account.</li>
+      <li><strong>Your Google and Microsoft accounts.</strong> SL GPA stays listed among the apps connected to your Google account — and to your university Microsoft account, if you linked one — until you remove it there. For Google, that is <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a>. Deleting your SL GPA account does not change either account.</li>
+      <li><strong>Anything already sent to an outside service.</strong> A transcript you submitted was read by Google's Gemini API, and is held under Google's own retention rules, which we cannot shorten. See the <a href="https://sl-gpa-calculator.github.io/privacy-policy/#transcript">privacy policy</a>.</li>
+      <li><strong>A few settings on your device.</strong> Your theme choice, whether you have seen the introduction, and which Opportunities items and report answers that device has already shown. None of it is sent to us; it goes when you clear the app's storage or uninstall it.</li>
+    </ul>
+  </section>
+
+  <section id="some-data">
+    <div class="section-head">
+      <span class="section-num">§5</span>
+      <h2>Removing some data without deleting your account</h2>
+    </div>
+    <p>You can remove a saved degree from the home screen at any time. That deletes every grade you entered for it from our servers.</p>
+    <p>For anything else — a transcript-check record, a report, a message — email us from your sign-in address and say what you want removed. These requests are handled the same way: as soon as possible, with an email to you when it is done.</p>
+  </section>
+
+  <section id="guests">
+    <div class="section-head">
+      <span class="section-num">§6</span>
+      <h2>If you never signed in</h2>
+    </div>
+    <p>There is no account, and nothing about you on our servers to delete. A guest's results are saved only on the device: clear the app's storage, or uninstall it, and they are gone from it. The app is left out of your phone's backup, so there is no copy of them in your Google account.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="contact-card">
+    <div>
+      <h3>Request deletion by email</h3>
+      <p>One inbox, read by the person who builds the app. Send it from the address you sign in with.</p>
+    </div>
+    <a class="contact-link" href="mailto:slgpa.app@gmail.com?subject=Delete%20my%20SL%20GPA%20account">slgpa.app@gmail.com</a>
+  </div>
+
+  <p class="disclaimer"><strong>Note on this document:</strong> this page describes what deleting an SL GPA account actually does today, as accurately as we can make it. The full <a href="https://sl-gpa-calculator.github.io/privacy-policy/">privacy policy</a> covers everything else. Neither is a substitute for legal advice, and neither has been reviewed by a lawyer.</p>
+
+  <div class="foot-meta">
+    <span>SL GPA</span>
+    <span>Last updated 2026-11-06</span>
+  </div>
+</footer>
+</body>
+</html>
